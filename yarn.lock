@@ -285,6 +285,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@types/marked@^4.0.3":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-4.0.7.tgz#400a76809fd08c2bbd9e25f3be06ea38c8e0a1d3"
+  integrity sha512-eEAhnz21CwvKVW+YvRvcTuFKNU9CV1qH+opcgVK3pIMI6YZzDm6gc8o2vHjldFk6MGKt5pueSB7IOpvpx5Qekw==
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
@@ -595,6 +600,13 @@ magic-string@^0.26.2:
   integrity sha512-u1Po0NDyFcwdg2nzHT88wSK0+Rih0N1M+Ph1Sp08k8yvFFU3KR72wryS7e1qMPJypt99WB7fIFVCA92mQrMjrg==
   dependencies:
     sourcemap-codec "^1.4.8"
+
+md-editor-rt@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/md-editor-rt/-/md-editor-rt-2.2.1.tgz#4dd1fa4342d3b62ed8b72d5014759a2bba408ab8"
+  integrity sha512-EHD343ZDP7M1zXn4E4kFU3w25Ni0DELuR2HhQKjuvRCujxWsMA8PYaRjrBjTnUAc/LsWdR7KvHYUtWeYnHHQ+g==
+  dependencies:
+    "@types/marked" "^4.0.3"
 
 ms@2.1.2:
   version "2.1.2"
