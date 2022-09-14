@@ -11,23 +11,23 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16
 
       - name: Install NPM packages
         run: npm install
 
-      - name: dist project
+      - name: Build project
         run: npm run build
 
-      - name: Upload production-ready dist files
-        uses: actions/upload-artifact@v2
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          name: production-files
+          name: web3-action-deploy-build
           path: dist
 
   deploy:
@@ -39,12 +39,10 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          name: production-files
+          name: web3-action-deploy-build
           path: dist
-
-      - uses: actions/checkout@v1
 
       - uses: chrnorm/deployment-action@v2
         name: Create GitHub deployment
