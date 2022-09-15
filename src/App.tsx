@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MdEditor from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 import "./App.css";
 
 function App() {
-  const [text, setText] = useState(`## web3-action-deploy
+  const [text, setText] = useState(``);
 
-  An example of react app deployment using github action.`);
+  const loadText = async () => {
+    const _text = await (await fetch("/content.md")).text();
+    setText(_text);
+  };
+
+  useEffect(() => {
+    loadText();
+  }, []);
 
   return (
     <MdEditor
@@ -14,6 +21,7 @@ function App() {
       onChange={setText}
       language="en-US"
       pageFullScreen={true}
+      previewTheme="github"
     />
   );
 }
