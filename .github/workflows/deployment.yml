@@ -31,7 +31,7 @@ jobs:
           path: dist
 
   deploy:
-    name: Deploy
+    name: Deploy & Publish
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -58,7 +58,7 @@ jobs:
           web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
           path_to_add: "dist"
 
-      - name: Publish w3name
+      - name: Publish revision to w3name
         uses: pawanpaudel93/w3name-action@v0.1
         id: publish
         with:
