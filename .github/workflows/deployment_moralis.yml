@@ -1,4 +1,4 @@
-name: Build & Deploy to web3.storage
+name: Build & Deploy to moralis
 on:
   push:
     branches:
@@ -55,9 +55,9 @@ jobs:
         uses: pawanpaudel93/add-to-web3@v0.1
         id: web3
         with:
-          web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
+          web3_token: ${{ secrets.WEB3_MORALIS_TOKEN }}
           path_to_add: "dist"
-          service: "web3.storage"
+          service: "moralis"
 
       - name: Publish revision to w3name
         uses: pawanpaudel93/w3name-action@v0.1
